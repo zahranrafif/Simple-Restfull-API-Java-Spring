@@ -46,11 +46,11 @@ public class myController {
    @RequestMapping(value = "/products/{id}", method = RequestMethod.DELETE)
    //@PathVariabel menentukan URI permintaan khusus atau dinamis
    public ResponseEntity<Object> delete(@PathVariable("id") String id) { 
-       //if jika id tidak ada maka akan muncul pesan  Product deleted not found dan data tidak didelete
+       //if jika id tidak ada maka akan muncul pesan  Product deleted not found dan data tidak dihapus
        if(!productRepo.containsKey(id)){
            return new ResponseEntity<>("Product deleted not found", HttpStatus.OK);
        }
-       //else jika id ada maka muncul pesan Product is deleted successsfully dan data didelete
+       //else jika id ada maka muncul pesan Product is deleted successsfully dan data dihapus
        else{
            productRepo.remove(id);
            return new ResponseEntity<>("Product is deleted successsfully", HttpStatus.OK);
