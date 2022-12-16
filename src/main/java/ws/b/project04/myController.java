@@ -2,6 +2,8 @@ package ws.b.project04;
 
 import java.util.Map;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -24,7 +26,13 @@ public class myController {
         //set id 1
         sedap.setId("1");
         //set Nama
-        sedap.setName("Mie Sedap[");
+        sedap.setName("Mie Sedap");
+        //set Price
+        sedap.setPrice(10000);
+        //set Number
+        sedap.setNumber(2); 
+        //set Total
+        sedap.setTotal();
         productRepo.put(sedap.getId(), sedap);
       
         Product lemonilo = new Product();
@@ -32,6 +40,12 @@ public class myController {
         lemonilo.setId("2");
         //set Nama
         lemonilo.setName("Lemonilo");
+        //set Price
+        lemonilo.setPrice(12000);
+        //set Number
+        lemonilo.setNumber(2);
+        //set Total
+        lemonilo.setTotal();
         productRepo.put(lemonilo.getId(), lemonilo);
         
         Product indomie = new Product();
@@ -39,6 +53,12 @@ public class myController {
         indomie.setId("3");
         //set Nama
         indomie.setName("Indomie");
+        //set Price
+        indomie.setPrice(5000);
+        //set Number
+        indomie.setNumber(3);
+        //set Total
+        indomie.setTotal();
         productRepo.put(indomie.getId(), indomie);
     }
     
@@ -55,7 +75,6 @@ public class myController {
            productRepo.remove(id);
            return new ResponseEntity<>("Product is deleted successsfully", HttpStatus.OK);
        }
-      
    }
    
    //@RequestMapping menentukan URL /products/{id}
