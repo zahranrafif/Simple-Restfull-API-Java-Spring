@@ -12,6 +12,7 @@ public class Product {
     private Integer price;
     private Integer number;
     private Integer total;
+    private String berat;
     
     public String getId() {
         return id;
@@ -31,6 +32,12 @@ public class Product {
     public void setPrice(Integer price){
         this.price = price;
     }
+    public String getBerat(){
+        return berat;
+    }
+    public void setBerat(String berat){
+        this.berat = berat;
+    }
     public Integer getNumber(){
         return number;
     }
@@ -43,4 +50,5 @@ public class Product {
     public void setTotal(){
         this.total = price * number;
     }
+
 }
