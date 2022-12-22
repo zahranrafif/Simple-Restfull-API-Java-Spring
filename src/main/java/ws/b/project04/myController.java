@@ -29,6 +29,8 @@ public class myController {
         sedap.setName("Mie Sedap");
         //set Price
         sedap.setPrice(10000);
+        //set Berat
+        sedap.setBerat("3 gram");
         //set Number
         sedap.setNumber(2); 
         //set Total
@@ -42,6 +44,8 @@ public class myController {
         lemonilo.setName("Lemonilo");
         //set Price
         lemonilo.setPrice(12000);
+        //set Berat
+        lemonilo.setBerat("2 gram");
         //set Number
         lemonilo.setNumber(2);
         //set Total
@@ -55,6 +59,8 @@ public class myController {
         indomie.setName("Indomie");
         //set Price
         indomie.setPrice(5000);
+        //set Berat
+        indomie.setBerat("5 gram");
         //set Number
         indomie.setNumber(3);
         //set Total
@@ -95,7 +101,6 @@ public class myController {
            productRepo.put(id, product);
            return new ResponseEntity<>("Product is updated successsfully", HttpStatus.OK);
        }
-      
    }
    
    //@RequestMapping menentukan URL /products
@@ -110,6 +115,7 @@ public class myController {
        else{
            //mengupdate/membuat data berdasar id
            productRepo.put(product.getId(), product);
+           product.setTotal();
            return new ResponseEntity<>("Product is created successfully", HttpStatus.CREATED);
        }
    }
